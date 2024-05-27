@@ -15,7 +15,7 @@ const HomePage = () => {
             />
           </div>
           <div className="introduction-section">
-            <h2 className="section-title">Hey, i am Shivam Yadav</h2>
+            <h2 className="section-title">Hey, I am Shivam Yadav</h2>
             <p className="section-text">
               A passionate cook and content creator. I love exploring new
               recipes and sharing my cooking journey with others through my
