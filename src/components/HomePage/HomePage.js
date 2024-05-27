@@ -11,6 +11,7 @@ const HomePage = () => {
             <img
               src="https://thumbs.dreamstime.com/b/business-man-13230848.jpg"
               className="profile-picture"
+              alt="#"
             />
           </div>
           <div className="introduction-section">
