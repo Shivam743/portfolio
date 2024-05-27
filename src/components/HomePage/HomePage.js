@@ -10,16 +10,15 @@ const HomePage = () => {
           <div className="profile-section">
             <img
               src="https://thumbs.dreamstime.com/b/business-man-13230848.jpg"
-              alt="Profile Picture"
               className="profile-picture"
             />
           </div>
           <div className="introduction-section">
-            <h2 className="section-title">Hey , i am Shivam Yadav</h2>
+            <h2 className="section-title">Hey, i am Shivam Yadav</h2>
             <p className="section-text">
-              A passionate cook and content creator. I love
-              exploring new recipes and sharing my cooking journey with others
-              through my YouTube channel and blog.
+              A passionate cook and content creator. I love exploring new
+              recipes and sharing my cooking journey with others through my
+              YouTube channel and blog.
             </p>
             <Link to="/contact" className="contact-link">
               <button className="contact-button">
