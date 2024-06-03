@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiSend } from 'react-icons/fi'; // Example icon from react-icons
 import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    Name: '',
+    Email: '',
+    Message: ''
   });
+
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,13 +19,30 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form data submitted:', formData);
+    setStatus('Sending...');
+
+    const form = new FormData();
+    form.append('entry.Name', formData.Name); // Replace with actual field entry for 'Name'
+    form.append('entry.Email', formData.Email); // Replace with actual field entry for 'Email'
+    form.append('entry.Message', formData.Message); // Replace with actual field entry for 'Message'
+
+    try {
+      await fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLScoJc6E0VxFqpqfQwtU0-6YE9X2r6Q1ZAYVA-hIZ08qwlQ0wg/formResponse', {
+        method: 'POST',
+        body: form,
+        mode: 'no-cors'
+      });
+      setStatus('Message sent!');
+    } catch (error) {
+      setStatus('Failed to send message.');
+    }
+
     setFormData({
-      name: '',
-      email: '',
-      message: ''
+      Name: '',
+      Email: '',
+      Message: ''
     });
   };
 
@@ -49,12 +67,12 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="Name">Name:</label>
           <input 
             type="text" 
-            id="name" 
-            name="name" 
-            value={formData.name} 
+            id="Name" 
+            name="Name" 
+            value={formData.Name} 
             onChange={handleChange} 
             required 
           />
@@ -65,12 +83,12 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="Email">Email:</label>
           <input 
             type="email" 
-            id="email" 
-            name="email" 
-            value={formData.email} 
+            id="Email" 
+            name="Email" 
+            value={formData.Email} 
             onChange={handleChange} 
             required 
           />
@@ -81,11 +99,11 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="Message">Message:</label>
           <textarea 
-            id="message" 
-            name="message" 
-            value={formData.message} 
+            id="Message" 
+            name="Message" 
+            value={formData.Message} 
             onChange={handleChange} 
             required 
           />
@@ -96,9 +114,10 @@ const Contact = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <FiSend className="send-icon" /> Submit
+          Submit
         </motion.button>
       </form>
+      {status && <p className="form-status">{status}</p>}
     </motion.div>
   );
 };

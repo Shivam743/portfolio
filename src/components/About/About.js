@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSpring, animated } from 'react-spring';
-import './About.css';
+import React from "react";
+import { useSpring, animated } from "react-spring";
+import "./About.css";
 
 const About = () => {
   const animationProps = useSpring({
@@ -11,16 +11,24 @@ const About = () => {
 
   return (
     <animated.div className="about-container" style={animationProps}>
-      <h2 className="about-title">About Me</h2>
-      <p className="about-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nisi sed purus
-        sollicitudin aliquam. Sed nec elit eget ipsum posuere efficitur. Integer vitae semper
-        velit, non pretium ante. Nam luctus felis a massa faucibus, nec placerat augue aliquet.
-        Proin auctor magna sit amet felis dapibus bibendum. Duis ultricies nulla sit amet
-        ullamcorper auctor. Vivamus sit amet lacus quis urna tincidunt condimentum. Donec vel
-        ligula nec libero mollis ultricies sit amet et nulla. Nulla hendrerit, justo at
-        consequat scelerisque, nisi libero vehicula nulla, vel fermentum enim odio sed nunc.
-      </p>
+      <section className="current-work">
+        <h2 className="section-title">What I'm Currently Working On</h2>
+        <p className="section-text">
+          I'm currently focused on enhancing my skills in machine learning,
+          specifically diving deeper into data preprocessing techniques and
+          model optimization. I'm also working on a personal project related to
+          sentiment analysis using natural language processing.
+        </p>
+      </section>
+      <section className="future-plans">
+        <h2 className="section-title">My Future Plans</h2>
+        <p className="section-text">
+          Looking ahead, I'm excited to explore advanced topics in deep learning
+          and reinforcement learning. I aim to contribute to real-world
+          applications of AI and collaborate with teams to develop innovative
+          solutions that address complex problems.
+        </p>
+      </section>
     </animated.div>
   );
 };

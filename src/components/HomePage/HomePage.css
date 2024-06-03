@@ -6,11 +6,13 @@ body {
   padding: 0;
   transition: background-color 0.3s ease;
 }
+
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
+
 .section-title {
   font-size: 24px;
   color: #333;
@@ -19,6 +21,7 @@ body {
   transform: translateY(-30px);
   animation: bounceIn 1s ease forwards;
 }
+
 @keyframes bounceIn {
   0% {
     opacity: 0;
@@ -33,6 +36,7 @@ body {
     transform: translateY(0);
   }
 }
+
 .section-text {
   color: #666;
   line-height: 1.6;
@@ -41,6 +45,7 @@ body {
   animation: fadeInUp 1s ease 0.5s forwards;
   transition: color 0.3s ease;
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -60,9 +65,11 @@ body {
   margin-bottom: 20px;
   transition: box-shadow 0.3s ease;
 }
+
 .banner:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .container {
   display: flex;
   align-items: center;
@@ -70,12 +77,14 @@ body {
   padding: 20px;
   transition: padding 0.3s ease;
 }
+
 .profile-section {
   flex-shrink: 0;
 }
+
 .profile-picture {
-  width: 150px;
-  height: 150px;
+  width: 15rem;
+  height: 20rem; /* Adjusted image height */
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #fff;
@@ -85,6 +94,7 @@ body {
   animation: profileAnimation 2s ease forwards;
   transition: transform 0.3s ease;
 }
+
 @keyframes profileAnimation {
   0% {
     opacity: 0;
@@ -99,34 +109,21 @@ body {
     transform: scale(1) rotate(0deg);
   }
 }
+
 .profile-picture:hover {
   transform: scale(1.1);
 }
+
 .introduction-section {
   flex-grow: 1;
   margin-left: 20px;
   transition: margin-left 0.3s ease;
 }
+
 .introduction-section:hover {
   margin-left: 30px;
 }
 
-/* Other section styles (introduction, projects, contact) */
-.introduction,
-.projects,
-.contact {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease;
-}
-.introduction:hover,
-.projects:hover,
-.contact:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
 .contact-button {
   background-color: #007bff;
   color: #fff;
@@ -136,10 +133,33 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .contact-button:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
+
 .contact-button i {
   margin-left: 5px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text inside introduction-section */
+  }
+
+  .profile-picture {
+    width: 20rem;
+    height: 20rem;
+    margin-right: 0;
+    margin-bottom: 10px; /* Add margin-bottom for spacing */
+  }
+
+  .introduction-section {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }

@@ -9,17 +9,28 @@ const HomePage = () => {
         <div className="container">
           <div className="profile-section">
             <img
-              src="https://thumbs.dreamstime.com/b/business-man-13230848.jpg"
+              src="/im.jpeg" // Relative path to the image
+              alt="Profile"
               className="profile-picture"
-              alt="#"
             />
           </div>
           <div className="introduction-section">
             <h2 className="section-title">Hey, I am Shivam Yadav</h2>
             <p className="section-text">
-              A passionate cook and content creator. I love exploring new
-              recipes and sharing my cooking journey with others through my
-              YouTube channel and blog.
+              Shivam Yadav is a highly motivated and skilled web developer with
+              a BTech in Computer Science and Engineering. He has a proven
+              track record of building engaging web applications using
+              technologies such as HTML, CSS, JavaScript, Python, and React.
+              Throughout his academic and professional journey, Shivam has honed
+              his expertise in designing responsive web applications and
+              translating complex requirements into user-friendly experiences.
+              He is well-versed in front-end development best practices and
+              design principles, enabling him to create visually appealing and
+              seamless digital experiences. Shivam's portfolio showcases his
+              versatility and talent with notable projects like a movie
+              recommendation website, a YouTube clone, and a Google clone. These
+              projects highlight his ability to craft functional and visually
+              appealing web applications that meet diverse user needs.
             </p>
             <Link to="/contact" className="contact-link">
               <button className="contact-button">
@@ -28,10 +39,6 @@ const HomePage = () => {
             </Link>
           </div>
         </div>
-      </section>
-      <section className="projects">
-        <h2 className="section-title">Featured Projects</h2>
-        <div className="project-list">{/* Render featured projects */}</div>
       </section>
     </div>
   );

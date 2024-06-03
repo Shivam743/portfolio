@@ -1,6 +1,6 @@
 .about-container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 10px;
@@ -12,14 +12,27 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.about-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.about-text {
-  font-size: 1rem;
+.section-text {
+  font-size: 1.2rem;
   line-height: 1.6;
-  color: #333;
+  color: #555;
+}
+
+.current-work,
+.future-plans {
+  margin-bottom: 30px;
+}
+
+.current-work .section-title {
+  color: #007bff;
+}
+
+.future-plans .section-title {
+  color: #28a745;
 }
